@@ -9,4 +9,5 @@ dependencies = [
     "legacy-cgi>=2.6.4",
     "python-dotenv>=1.2.2",
     "streamlit>=1.28.0",
+    "watchdog>=6.0.0",
 ]
