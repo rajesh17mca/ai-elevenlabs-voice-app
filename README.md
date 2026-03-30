@@ -12,11 +12,12 @@ A production-grade web application for **Text to Speech** and **Speech to Text**
 
 ```
 elevenlabs_learning/
-├── app.py        # Production web app (HTTP server + UI)
-├── main.py       # CLI script for quick TTS + STT testing
+├── app.py              # Production web app (HTTP server + UI)
+├── streamlit_app.py    # Streamlit web app (alternative UI)
+├── main.py             # CLI script for quick TTS + STT testing
 ├── pyproject.toml
 ├── uv.lock
-└── .env          # API keys (not committed)
+└── .env                # API keys (not committed)
 ```
 
 ## Prerequisites
@@ -58,7 +59,20 @@ ELEVENLABS_API_KEY=your_api_key_here
 
 ## Usage
 
-### Web App
+### Streamlit App (Recommended)
+
+```bash
+uv run streamlit run streamlit_app.py
+```
+
+Open the provided URL in your browser (usually [http://localhost:8501](http://localhost:8501)).
+
+| Tab | How to use |
+|-----|-----------|
+| **Text to Speech** | Type or paste text → click **Convert to Speech** → play or download the MP3 |
+| **Speech to Text** | Upload an audio file → click **Transcribe Audio** → read or download the TXT |
+
+### Web App (Alternative)
 
 ```bash
 .venv/bin/python app.py
@@ -117,3 +131,4 @@ MP3, WAV, M4A, OGG, FLAC, MP4 (and most other audio/video formats supported by E
 |---------|---------|
 | `elevenlabs` | ElevenLabs Python SDK |
 | `python-dotenv` | Load API keys from `.env` |
+| `streamlit` | Web app framework (for streamlit_app.py) |
